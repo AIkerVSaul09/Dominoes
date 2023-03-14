@@ -1,41 +1,26 @@
 ﻿class Domino
 {
-    private int d1,d2;
-    private int total;
+   public int d1;
+   public int d2;
 
-    public Domino(int total)
-    {
-        Domino a = (0,1);
-        Domino b = (2,3);
-      total = d1+d2;
-    }
-
-    public void domino (int d1, int d2)
+    public Domino(int d1, int d2)
     {
       this.d1=d1;
       this.d2=d2;
     }
-    public void Imprime()
+    public static int operator + (Domino a, Domino b)
     {
-        
-        Console.WriteLine(total);
-    }
-    public static Domino operator +(Domino a, Domino b)
-    {
-      int total = a.d1+b.d2;
-      return new Domino(total);
-    }
-
-    public static implicit operator Domino((int, int) v)
-    {
-        throw new NotImplementedException();
+      int suma=a.d1+a.d2+b.d1+b.d2;
+      return suma;
     }
 }
- class Program
+class Program
 {
     private static void Main(string[] args)
     {
-        Console.ReadKey();
-
+      Domino d1= new Domino (0,1);
+      Domino d2= new Domino (2,3);
+      int total= d1 + d2;
+      Console.WriteLine(total);
     }
 }
